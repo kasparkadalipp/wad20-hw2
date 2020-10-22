@@ -19,6 +19,23 @@ a {
     color: #40c4ff;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li:nth-child(n+2){
+    padding-bottom: 4px;
+    padding-top: 2px;
+    border-top: 0.5px solid #d0d0d0;
+}
+
+ul li p {
+    margin: 0;
+    padding-bottom: 4px;
+}
+
 .login-page {
     width: 100%;
     height: 100%;
@@ -119,6 +136,19 @@ nav div.avatar-container {
     margin: auto auto;
     padding: 90px 15px 15px 15px;
     background-color: #ffffff;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    right: 5px;
+    width: auto;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    text-align: left;
 }
 
 .post {
