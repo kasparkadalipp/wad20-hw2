@@ -13,7 +13,13 @@ $(() => {
         });
 
     $.get("https://private-anon-af03cd5f74-wad20postit.apiary-mock.com/profiles",
-        users => undefined); // TODO
+        profiles => {
+            profiles.forEach(data => $(".profile-container").append(Profile(data)));
+            $(".follow-button").on("click", function () {
+                $(this).toggleClass("followed");
+                $(this).text($(this).hasClass("followed") ? "Followed" : "Follow");
+            });
+        });
 });
 
 const DropdownMenu = ({firstname, lastname, email, avatar}) => `
@@ -32,7 +38,7 @@ const DropdownMenu = ({firstname, lastname, email, avatar}) => `
 const Post = ({author, createTime, media, text, likes}) => `
     <div class="post">
         <div class="post-author">
-            ${AuthorInfo(author)}
+            ${Author(author)}
             <small>${createTime}</small>
         </div>
         ${media === null ? "" : Media(media)}
@@ -42,7 +48,7 @@ const Post = ({author, createTime, media, text, likes}) => `
         </div>
     </div>`
 
-const AuthorInfo = ({avatar, firstname, lastname}) => `
+const Author = ({avatar, firstname, lastname}) => `
     <span class="post-author-info">
         <img src=${avatar} alt="Post author">
         <small>${firstname + " " + lastname}</small>
@@ -64,4 +70,13 @@ const Media = ({type, url}) =>
 const Title = (text) => `
     <div class="post-title">
         <h3>${text}</h3>
+    </div>`
+
+const Profile = ({avatar, firstname, lastname}) => `
+    <div class="profile">
+        <img src=${avatar} alt="User">
+        <p>${firstname + " " + lastname}</p>
+        <div class="browse-actions">
+            <button type="button" name="like" class="follow-button">Follow</button>
+        </div>
     </div>`
