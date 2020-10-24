@@ -1,12 +1,17 @@
-$(document).ready(function () {
+$(() => {
     $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1",
         data => $(".avatar-container")
             .append(Avatar(data))
-            .click(() => $(".dropdown-menu").toggle()
+            .on("click", () => $(".dropdown-menu").toggle()
             ));
 
     $.get("https://private-anon-af03cd5f74-wad20postit.apiary-mock.com/posts",
-        data => data.forEach(content => $(".main-container").append(Post(content))));
+        data => {
+            data.forEach(content => $(".main-container").append(Post(content)));
+            $(".like-button").on("click",function () {
+                $(this).toggleClass('liked');
+            });
+        });
 });
 
 const Avatar = ({firstname, lastname, email, avatar}) => `
@@ -59,8 +64,3 @@ const Media = ({type, url}) =>
         `<div class="post-image">
             <img src=${url} alt="">
         </div>`
-
-
-
-
-
