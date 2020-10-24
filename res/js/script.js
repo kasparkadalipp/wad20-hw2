@@ -2,16 +2,13 @@ $(document).ready(function () {
     $(".avatar").click(function () {
         $(".dropdown-menu").toggle();
     });
-    $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1", function (data) {
-        $(".result").html(data);
-        let firstname = data.firstname;
-        let lastname = data.lastname;
-        let email = data.email;
-        let picture = data.avatar;
-        $(".name").text(firstname.concat(" ", lastname));
-        $(".email").text(email);
-        $(".avatar").attr("src", picture);
-    });
+    $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1",
+        ({firstname, lastname, email, avatar}) => {
+            $(".result").html(data);
+            $(".name").text(firstname.concat(" ", lastname));
+            $(".email").text(email);
+            $(".avatar").attr("src", avatar);
+        });
     $.get("https://private-anon-af03cd5f74-wad20postit.apiary-mock.com/posts",
         data => data.forEach(content => $(".main-container").append(Post(content))));
 });
@@ -30,7 +27,7 @@ const Post = ({author, createTime, media, text, likes}) => `
     </div>
 `;
 
-const Text = (text) =>`
+const Text = (text) => `
     <div class="post-title">
         <h3>${text}</h3>
     </div>`
