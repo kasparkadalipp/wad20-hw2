@@ -1,20 +1,26 @@
 $(document).ready(function () {
-    $(".avatar").click(function () {
-        $(".dropdown-menu").toggle();
-    });
-    $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1", data => {
-        $(".result").html(data);
-        let firstname = data.firstname;
-        let lastname = data.lastname;
-        let email = data.email;
-        let picture = data.avatar;
-        $(".name").text(firstname.concat(" ", lastname));
-        $(".email").text(email);
-        $(".avatar").attr("src", picture);
-    });
+    $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1",
+        data => $(".avatar-container")
+            .append(Avatar(data))
+            .click(() => $(".dropdown-menu").toggle()
+            ));
+
     $.get("https://private-anon-af03cd5f74-wad20postit.apiary-mock.com/posts",
         data => data.forEach(content => $(".main-container").append(Post(content))));
 });
+
+const Avatar = ({firstname, lastname, email, avatar}) => `
+    <img src=${avatar} class="avatar" alt="Me">
+    <div class = "dropdown-menu">
+        <ul>
+            <li>
+                <p>${firstname + ' ' + lastname}</p>
+                <p>${email}</p>
+            </li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </div>`
 
 const Post = ({author, createTime, media, text, likes}) => `
     <div class="post">
@@ -28,7 +34,7 @@ const Post = ({author, createTime, media, text, likes}) => `
             <button type="button" name="like" class="like-button">${likes}</button>
         </div>
     </div>
-`;
+`
 
 const Text = (text) => `
     <div class="post-title">
