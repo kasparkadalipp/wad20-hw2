@@ -133,6 +133,7 @@ nav div.avatar-container {
 .main-container {
     width: 50%;
     min-height: 100%;
+    min-width: 450px;
     margin: auto auto;
     padding: 90px 15px 15px 15px;
     background-color: #ffffff;
@@ -153,6 +154,7 @@ nav div.avatar-container {
 
 .post {
     width: 80%;
+    min-width: 450px;
     margin: 15px auto;
     box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
     border-radius: 5px;
