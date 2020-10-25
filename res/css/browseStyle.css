@@ -50,12 +50,13 @@ body{
     margin-right: auto;
 
 }
+.follow-button{
+    background-color:#82008f
+}
 
 .follow-button.followed {
     background-color: #fefefe;
-    color: #01579b;
-    border-style: groove;
+    color: #82008f;
+    border: 1px #82008f solid;
     border-radius: 4px;
-    border-width: thin;
-    border-color: #01579b;
 }
