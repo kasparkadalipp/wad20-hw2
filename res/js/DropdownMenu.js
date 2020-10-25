@@ -11,4 +11,4 @@ const DropdownMenu = ({firstname, lastname, email, avatar}) => `
         </ul>
     </div>`
 
-export default DropdownMenu;
+export default DropdownMenu

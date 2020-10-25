@@ -1,6 +1,6 @@
-import Post from "./Post"
-import DropdownMenu from "./DropdownMenu";
-import Profile from "./Profile";
+import Post from "./Post.js"
+import DropdownMenu from "./DropdownMenu.js";
+import Profile from "./Profile.js";
 
 $(() => {
     $.get("https://private-anon-19b2331a1a-wad20postit.apiary-mock.com/users/1",

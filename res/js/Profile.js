@@ -9,4 +9,4 @@ const Profile = ({avatar, firstname, lastname}) => `
         </div>
     </div>`
 
-export default Profile;
+export default Profile

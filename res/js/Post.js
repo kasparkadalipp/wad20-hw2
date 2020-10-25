@@ -35,4 +35,4 @@ const Title = (text) => `
         <h3>${text}</h3>
     </div>`
 
-export default Post;
+export default Post
