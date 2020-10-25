@@ -16,6 +16,7 @@ $(() => {
         profiles => {
             profiles.forEach(data => $(".profile-container").append(Profile(data)));
             $(".follow-button").on("click", function () {
+                $(this).toggleClass("liked");
                 $(this).toggleClass("followed");
                 $(this).text($(this).hasClass("followed") ? "Followed" : "Follow");
             });
@@ -74,7 +75,9 @@ const Title = (text) => `
 
 const Profile = ({avatar, firstname, lastname}) => `
     <div class="profile">
-        <img src=${avatar} alt="User">
+        <div class="mask">
+            <img src=${avatar} alt="User">
+        </div>
         <p>${firstname + " " + lastname}</p>
         <div class="browse-actions">
             <button type="button" name="like" class="follow-button">Follow</button>
