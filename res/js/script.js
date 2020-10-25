@@ -16,7 +16,6 @@ $(() => {
         profiles => {
             profiles.forEach(data => $(".profile-container").append(Profile(data)));
             $(".follow-button").on("click", function () {
-                $(this).toggleClass("liked");
                 $(this).toggleClass("followed");
                 $(this).text($(this).hasClass("followed") ? "Followed" : "Follow");
             });

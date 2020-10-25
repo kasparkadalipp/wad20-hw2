@@ -37,7 +37,7 @@ body{
 
 }
 
-.follow-button.liked {
+.follow-button.followed {
     background-color: #fefefe;
     color: #01579b;
     border-style: groove;
