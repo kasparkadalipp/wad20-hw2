@@ -4,7 +4,7 @@ body{
 
 .main{
     width: 50%;
-    min-width: 25%;
+    min-width: 450px;
     min-height: 100%;
     margin: auto auto;
     padding: 90px 15px 15px 15px;
