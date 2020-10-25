@@ -1,8 +1,10 @@
-body{
-    height: 100%; padding: 0; margin: 0;
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.main{
+main {
     width: 50%;
     min-width: 450px;
     min-height: 100%;
@@ -11,13 +13,13 @@ body{
     background-color: #ffffff;
 }
 
-.profile-container{
+.profile-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
 }
 
-.profile{
+.profile {
     display: inline-block;
     background-color: #fefefe;
     border-style: groove;
@@ -26,13 +28,13 @@ body{
     padding: 2px;
 }
 
-.profile p{
+.profile p {
     text-align: center;
     font-weight: bold;
     font-size: larger;
 }
 
-.mask{
+.mask {
     margin: 15px auto;
     display: block;
     width: 100px;
@@ -41,20 +43,20 @@ body{
     overflow: hidden;
 }
 
-.mask img{
+.mask img {
     max-width: 100%;
     min-height: 100%;
     object-fit: cover;
 }
 
-.profile button{
+.profile button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
-.follow-button{
-    background-color:#82008f
+
+.follow-button {
+    background-color: #82008f
 }
 
 .follow-button.followed {
